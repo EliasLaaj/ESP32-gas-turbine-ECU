@@ -59,7 +59,7 @@ void loop() {
 
   blinkState = !blinkState;
 
-  delay(180); // Refresh rate
+  delay(100); // Refresh rate
 }
 
 void updateStatus() {
@@ -222,8 +222,27 @@ void drawVerticalBar(int x, int y, int width, int height, float value, float max
 // Function to simulate changes in values
 // Direction variables to track increase/decrease
 
+void updateValues() { // Version of updateValues to read actual data
+  while (Serial.available()) {
+    String receivedData = Serial.readStringUntil('\n'); // Read a line from Serial
+    receivedData.trim(); // Remove any extra whitespace or newlines
 
-void updateValues() {
+    if (receivedData.startsWith("P:")) {
+      oil = receivedData.substring(2).toFloat(); // Extract and convert Oil Pressure
+    } 
+    else if (receivedData.startsWith("T:")) {
+      tot = receivedData.substring(2).toInt(); // Extract and convert TOT
+    } 
+    else if (receivedData.startsWith("R:")) {
+      n1 = receivedData.substring(2).toInt(); // Extract and convert RPM
+    } 
+    else if (receivedData.startsWith("S:")) {
+      status = receivedData.substring(2); // Extract Status as a string
+    }
+  }
+}
+
+/*void updateValues() { // Version of updateValues to simulate changes
   static int totDir = 1;  
   static int n1Dir = 1;  
   static int oilDir = 1;  
@@ -269,6 +288,5 @@ void updateValues() {
 
   // Randomly set status to be a string between "1" and "11"
   status = String(random(1, 12));  // Generates a number between 1 and 11, converts to string
-
-
 }
+*/
