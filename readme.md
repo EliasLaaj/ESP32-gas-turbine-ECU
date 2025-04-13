@@ -1,7 +1,3 @@
-Below is an example of a comprehensive wiki-style documentation for the ESP32 Jet ECU V6.0 firmware. You can use this documentation within your repository’s wiki (or as a standalone document) to help developers understand the hardware, software architecture, and detailed behavior of each function within the code.
-
----
-
 # ESP32 Jet ECU V6.0 Wiki Documentation
 
 This firmware is designed for an ESP32-based engine control unit (ECU) that manages engine startup, ignition, oil pressure regulation, throttle control, and various safety systems. The ECU reads multiple sensor inputs, performs dynamic idle adjustments, and communicates over both a secondary serial channel (for an instrument cluster) and via Bluetooth. This document explains the hardware setup, software structure, and detailed function-by-function reference.
@@ -275,11 +271,3 @@ When connected via Bluetooth, the ECU listens for the following commands (each c
 - **Modularization:** Breaking the firmware into smaller libraries or modules may improve maintainability.
 - **Advanced Diagnostics:** Future revisions may include more detailed logging and diagnostic output for debugging and performance monitoring.
 - **User Interface:** Enhancements to the Bluetooth command set could include more robust error reporting and interactive calibration steps.
-
----
-
-This documentation serves as a starting point for understanding the ESP32 Jet ECU V6.0 firmware. Developers are encouraged to refer directly to the source code for in-depth details and to update this wiki as new features or modifications are implemented.
-
-Happy coding!
-
----
