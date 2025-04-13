@@ -1,4 +1,4 @@
-# ESP32 Jet ECU V6.0 Wiki Documentation
+# ESP32 Jet ECU Wiki Documentation
 
 This firmware is designed for an ESP32-based engine control unit (ECU) that manages engine startup, ignition, oil pressure regulation, throttle control, and various safety systems. The ECU reads multiple sensor inputs, performs dynamic idle adjustments, and communicates over both a secondary serial channel (for an instrument cluster) and via Bluetooth. This document explains the hardware setup, software structure, and detailed function-by-function reference.
 
