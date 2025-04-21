@@ -155,7 +155,7 @@ The firmware uses a number of defined constants and global flags to control beha
 - **`readPressure()`**  
   - **Purpose:** Reads an analog value from the oil pressure sensor and converts it into a pressure (in bars) using a quadratic approximation.
 
-### Actuator Control Functions
+### System Control Functions
 
 - **`setOilRpm(int oilPercentage)`**  
   - **Purpose:** Generates a PWM signal on the oil pump output pin.
@@ -196,6 +196,7 @@ The firmware uses a number of defined constants and global flags to control beha
     - **SetOilPressure / SetOil:** Adjusts oil pump settings based on numeric input.
     - **PotRead:** Reads and reports the current throttle and idle potentiometer values.
     - **ThrottleCalibration:** Runs a calibration routine to save throttle position values to EEPROM.
+    - **CalibrateOilSensor:** Runs a calibration routine to set up `readPressure()` based on oil pressure sensor output values.
 
 - **EEPROM Functions:**
   - **`saveCalibrationValues(int minThrottleValue, int maxThrottleValue)`**  
